@@ -111,8 +111,6 @@ download_cbdep() {
     do
       get_cbdep_git boost_${repo}
     done
-  elif [[ $dep == 'openjdk-rt' ]]; then
-    continue
   else
     get_cbdep_git ${dep}
   fi
