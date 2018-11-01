@@ -111,6 +111,9 @@ download_cbdep() {
     do
       get_cbdep_git boost_${repo}
     done
+  # skip openjdk-rt cbdeps build
+  elif [[ ${dep} == 'openjdk-rt' ]]; then
+    break
   else
     get_cbdep_git ${dep}
   fi

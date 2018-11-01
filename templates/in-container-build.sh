@@ -89,11 +89,11 @@ build_cbdep() {
     ${TLMDIR}/deps/packages/*/*.sh
   shopt -u nullglob
 
-  # Patch openjdk-rt
-  if [ $dep == 'openjdk-rt' ]
+  # skip openjdk-rt cbdeps build
+  if [ ${dep} == 'openjdk-rt' ]
   then
-    rm -f ${TLMDIR}/tlm/deps/packages/openjdk-rt/dl_rt_jar.cmake
-    touch ${TLMDIR}/tlm/deps/packages/openjdk-rt/dl_rt_jar.cmake
+    rm -f ${TLMDIR}/deps/packages/openjdk-rt/dl_rt_jar.cmake
+    touch ${TLMDIR}/deps/packages/openjdk-rt/dl_rt_jar.cmake
   fi
 
   # Invoke the actual build script
