@@ -10,7 +10,7 @@ couchbasebuild/server-ubuntu14-build:20180829
 couchbasebuild/server-ubuntu16-build:20181017"
 
 # QQQ possibly keep this list somewhere canonical per build also
-GOVERS="1.7.6 1.8.3 1.8.5 1.9.6"
+GOVERS="1.7.6 1.8.3 1.8.5 1.9.6 1.10.3"
 
 # QQQ parameterize?
 VERSION=6.0.0
@@ -113,7 +113,7 @@ download_cbdep() {
     done
   # skip openjdk-rt cbdeps build
   elif [[ ${dep} == 'openjdk-rt' ]]; then
-    break
+    :
   else
     get_cbdep_git ${dep}
   fi
